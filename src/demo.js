@@ -42,7 +42,7 @@ export default function TransferList() {
   };
 
   const handleAllRight = () => {
-    setRight(right.concat(left));
+    setRight(right.concat([...left, ...leftNew]));
     setLeft([]);
     setLeftNew([]);
   };
@@ -64,8 +64,8 @@ export default function TransferList() {
   };
 
   const handleAllLeft = () => {
-    setLeft(left.concat(defaultLeft.filter((d) => right.includes(d))));
-    setLeft(leftNew.concat(defaultLeftNew.filter((d) => right.includes(d))));
+    setLeft(defaultLeft);
+    setLeftNew(defaultLeftNew);
     setRight([]);
   };
 
